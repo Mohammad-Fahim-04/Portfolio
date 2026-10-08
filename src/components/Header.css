@@ -1,0 +1,205 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background: radial-gradient(
+    circle at center,
+    #ffffff 0%,
+    #d0d0d0 25%,
+    #9d9d9d 50%,
+    #646464 70%,
+    #292929 90%,
+    #000000 100%
+  );
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes headerIn{
+    from{
+        opacity:0;
+        transform:translate(-50%, -40px);
+    }
+    to{
+        opacity:1;
+        transform:translate(-50%, 0);
+    }
+}
+
+@keyframes itemIn{
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------- HEADER ---------- */
+
+.header{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:1000;
+    width: 85%;
+    padding: 14px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 30px;
+    border:1px solid rgba(255,255,255,0.1);
+
+    background: rgba(20,20,20,0.4);
+    backdrop-filter: blur(12px);
+
+    animation: headerIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transition:
+        top 0.4s ease,
+        width 0.4s ease,
+        padding 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* Scroll Effect: navbar thoda chhota aur solid ho jata hai */
+
+.header.scroll{
+    top: 10px;
+    width: 80%;
+    padding: 10px 30px;
+    background: rgba(15,15,15,0.8);
+    backdrop-filter: blur(16px);
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* ---------- LOGO ---------- */
+
+.logo h1{
+    color:#ddd;
+    letter-spacing:2px;
+    font-size:24px;
+    font-weight:600;
+    cursor:pointer;
+    animation: itemIn 0.7s ease 0.3s both;
+    transition: letter-spacing 0.4s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo h1 span{
+    color:#777777;
+    transition: color 0.3s ease;
+}
+
+.logo h1:hover{
+    color:#fff;
+    letter-spacing:3px;
+    text-shadow:0 0 12px rgba(255,255,255,0.35);
+}
+
+.logo h1:hover span{
+    color:#bbb;
+}
+
+/* ---------- LINKS ---------- */
+
+ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.links li{
+    animation: itemIn 0.6s ease both;
+}
+
+.links li:nth-child(1){ animation-delay:0.4s; }
+.links li:nth-child(2){ animation-delay:0.5s; }
+.links li:nth-child(3){ animation-delay:0.6s; }
+.links li:nth-child(4){ animation-delay:0.7s; }
+.links li:nth-child(5){ animation-delay:0.8s; }
+.links li:nth-child(6){ animation-delay:0.9s; }
+
+.links li a{
+    position:relative;
+    display:inline-block;
+    padding-bottom:4px;
+    text-decoration:none;
+    color:#ccc;
+    font-size:17px;
+    font-weight:500;
+    transition:color 0.3s ease, transform 0.3s ease;
+}
+
+/* Underline jo beech se dono taraf failta hai */
+
+.links li a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0;
+    height:2px;
+    border-radius:2px;
+    background:linear-gradient(90deg, #888, #fff, #888);
+    transition:width 0.35s ease, left 0.35s ease;
+}
+
+.links li a:hover{
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.links li a:hover::after{
+    width:100%;
+    left:0;
+}
+
+/* ---------- ICONS ---------- */
+
+.icons{
+    display:flex;
+    gap:18px;
+}
+
+.icons li{
+    font-size:22px;
+    animation: itemIn 0.6s ease both;
+}
+
+.icons li:nth-child(1){ animation-delay:1s; }
+.icons li:nth-child(2){ animation-delay:1.1s; }
+.icons li:nth-child(3){ animation-delay:1.2s; }
+
+.icons li a{
+    display:inline-block;
+    text-decoration:none;
+    color:#ccc;
+    transition:color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.icons li a:hover{
+    color:#fff;
+    transform:translateY(-3px) scale(1.12);
+    text-shadow:0 0 10px rgba(255,255,255,0.5);
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation:none !important;
+        transition:none !important;
+    }
+}

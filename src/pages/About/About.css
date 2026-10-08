@@ -1,0 +1,334 @@
+.about{
+    margin:70px auto;
+    max-width:1200px;
+    padding:40px;
+}
+
+/* ---------- TITLE ---------- */
+
+.title{
+    margin-bottom:70px;
+    font-size:42px;
+    color:#777777;
+    text-align:center;
+    position:relative;
+}
+
+.title::after{
+    content:"";
+    width:120px;
+    height:3px;
+    background:#777777;
+    display:block;
+    margin:15px auto 0;
+    border-radius:2px;
+}
+
+/* ---------- LAYOUT ---------- */
+
+.content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+}
+
+/* ---------- PHOTO ---------- */
+
+.photo-card{
+    position:relative;
+    width:320px;
+    height:420px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+/* photo ke piche do corner brackets jo halke pulse karte hain */
+.photo-card::before,
+.photo-card::after{
+    content:"";
+    position:absolute;
+    width:46px;
+    height:46px;
+    pointer-events:none;
+    opacity:0.6;
+    transition:width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+               height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    animation:about-corner 4.5s ease-in-out infinite alternate;
+}
+
+.photo-card::before{
+    top:-14px;
+    left:-14px;
+    border-top:2px solid #666;
+    border-left:2px solid #666;
+}
+
+.photo-card::after{
+    right:-14px;
+    bottom:-14px;
+    border-right:2px solid #666;
+    border-bottom:2px solid #666;
+    animation-delay:-2.2s;
+}
+
+.photo-card:hover::before,
+.photo-card:hover::after{
+    width:74px;
+    height:74px;
+}
+
+/* flip "transform" se hota hai, float "translate" se, isliye dono takraate nahi */
+.photo-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-style:preserve-3d;
+    animation:about-float 7s ease-in-out infinite;
+}
+
+.photo-inner.flip{
+    transform:rotateY(180deg);
+}
+
+.photo-front{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.photo-front img{
+    width:100%;
+    height:100%;
+    border-radius:12px;
+    object-fit:cover;
+    filter:grayscale(20%);
+    transition:transform 0.7s ease, filter 0.7s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* bahut halka light sweep jo kuch second mein ek baar photo par guzarta hai */
+.photo-front::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-60%;
+    width:40%;
+    height:100%;
+    pointer-events:none;
+    background:linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,0.12),
+        transparent
+    );
+    transform:skewX(-18deg);
+    animation:about-sheen 9s ease-in-out 2s infinite;
+}
+
+.photo-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    transform:rotateY(180deg);
+    backface-visibility:hidden;
+}
+
+.photo-back img{
+    width:100%;
+    height:100%;
+    border-radius:12px;
+    object-fit:cover;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+.photo-card:hover .photo-front img{
+    transform:scale(1.05);
+    filter:grayscale(0%);
+}
+
+/* ---------- TEXT ---------- */
+
+.text-about{
+    position:relative;
+    max-width:520px;
+    padding-left:28px;
+}
+
+/* text ke left mein patli line jo upar se neeche draw hoti hai */
+.text-about::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:6px;
+    bottom:6px;
+    width:2px;
+    border-radius:2px;
+    background:linear-gradient(to bottom, #777, rgba(119,119,119,0.15));
+    transform-origin:top;
+}
+
+.text-about p{
+    font-size:18px;
+    line-height:1.9;
+    color:#333333;
+    text-align:left;
+}
+
+.text-about p + p{
+    margin-top:16px;
+}
+
+/* ---------- SCROLL ANIMATIONS (Chrome/Edge) ---------- */
+/* jis browser mein ye support nahi hai, wahan sab kuch bina animation ke normal dikhega */
+
+@supports (animation-timeline: view()) {
+
+    .title{
+        animation:about-rise linear both;
+        animation-timeline:view();
+        animation-range:entry 0% entry 70%;
+    }
+
+    .title::after{
+        animation:about-underline linear both;
+        animation-timeline:view();
+        animation-range:entry 20% entry 90%;
+    }
+
+    .photo-card{
+        animation:about-in-left linear both;
+        animation-timeline:view();
+        animation-range:entry 5% entry 85%;
+    }
+
+    .text-about{
+        animation:about-in-right linear both;
+        animation-timeline:view();
+        animation-range:entry 5% entry 85%;
+    }
+
+    .text-about::before{
+        animation:about-line linear both;
+        animation-timeline:view();
+        animation-range:entry 10% cover 45%;
+    }
+
+    .text-about p{
+        animation:about-rise linear both;
+        animation-timeline:view();
+        animation-range:entry 10% entry 100%;
+    }
+}
+
+/* ---------- KEYFRAMES ---------- */
+/* "translate" aur "scale" use hui hain taaki flip/hover ke "transform" se na takraye */
+
+@keyframes about-rise{
+    from{
+        opacity:0;
+        translate:0 28px;
+    }
+    to{
+        opacity:1;
+        translate:0 0;
+    }
+}
+
+@keyframes about-in-left{
+    from{
+        opacity:0;
+        translate:-60px 0;
+    }
+    to{
+        opacity:1;
+        translate:0 0;
+    }
+}
+
+@keyframes about-in-right{
+    from{
+        opacity:0;
+        translate:60px 0;
+    }
+    to{
+        opacity:1;
+        translate:0 0;
+    }
+}
+
+@keyframes about-underline{
+    from{ scale:0 1; }
+    to{ scale:1 1; }
+}
+
+@keyframes about-line{
+    from{ scale:1 0; }
+    to{ scale:1 1; }
+}
+
+@keyframes about-float{
+    0%, 100%{ translate:0 0; }
+    50%{ translate:0 -8px; }
+}
+
+@keyframes about-corner{
+    from{ opacity:0.3; }
+    to{ opacity:0.85; }
+}
+
+@keyframes about-sheen{
+    0%{ left:-60%; opacity:0; }
+    8%{ opacity:1; }
+    30%{ left:130%; opacity:1; }
+    36%, 100%{ left:130%; opacity:0; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width:900px){
+    .about{
+        padding:24px;
+    }
+
+    .content{
+        flex-direction:column;
+        gap:56px;
+    }
+
+    .title{
+        font-size:34px;
+        margin-bottom:48px;
+    }
+
+    .text-about{
+        max-width:100%;
+    }
+
+    .text-about p{
+        font-size:16px;
+        line-height:1.8;
+    }
+}
+
+@media (max-width:400px){
+    .photo-card{
+        width:260px;
+        height:350px;
+    }
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion:reduce){
+    .about *,
+    .about *::before,
+    .about *::after{
+        animation:none !important;
+        transition-duration:0.01ms !important;
+    }
+}
