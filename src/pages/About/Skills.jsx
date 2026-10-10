@@ -29,7 +29,7 @@ import {
 
 function Skills() {
   return (
-    <div className="skills" id="skills">
+    <div className="skills">
       <h3>Skills</h3>
       <div className="skills-slider">
         <div className="skills-track">

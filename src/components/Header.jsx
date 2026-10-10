@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
 
-const sectionIds = ["hero", "about", "skills", "project", "serv", "contact"]
+const sectionIds = ["hero", "about", "project", "serv", "contact"]
 
 function Header() {
 
@@ -121,7 +121,6 @@ function Header() {
                 <ul className="links">
                     <li><a className={activeSection === "hero" ? "active" : undefined} aria-current={activeSection === "hero" ? "location" : undefined} href="#hero" onClick={() => navigateToSection("hero")}>Home</a></li>
                     <li><a className={activeSection === "about" ? "active" : undefined} aria-current={activeSection === "about" ? "location" : undefined} href="#about" onClick={() => navigateToSection("about")}>About</a></li>
-                    <li><a className={activeSection === "skills" ? "active" : undefined} aria-current={activeSection === "skills" ? "location" : undefined} href="#skills" onClick={() => navigateToSection("skills")}>Skills</a></li>
                     <li><a className={activeSection === "project" ? "active" : undefined} aria-current={activeSection === "project" ? "location" : undefined} href="#project" onClick={() => navigateToSection("project")}>Projects</a></li>
                     <li><a className={activeSection === "serv" ? "active" : undefined} aria-current={activeSection === "serv" ? "location" : undefined} href="#serv" onClick={() => navigateToSection("serv")}>Services</a></li>
                     <li><a className={activeSection === "contact" ? "active" : undefined} aria-current={activeSection === "contact" ? "location" : undefined} href="#contact" onClick={() => navigateToSection("contact")}>Contact</a></li>
