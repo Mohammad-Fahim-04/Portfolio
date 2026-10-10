@@ -1,6 +1,7 @@
 .about{
     margin:70px auto;
     max-width:1200px;
+    width:100%;
     padding:40px;
 }
 
@@ -31,6 +32,7 @@
     align-items:center;
     justify-content:center;
     gap:80px;
+    min-width:0;
 }
 
 /* ---------- PHOTO ---------- */
@@ -156,7 +158,12 @@
 .text-about{
     position:relative;
     max-width:520px;
+    min-width:0;
     padding-left:28px;
+}
+
+.text-about p{
+    overflow-wrap:anywhere;
 }
 
 /* text ke left mein patli line jo upar se neeche draw hoti hai */
@@ -315,10 +322,30 @@
     }
 }
 
+@media (max-width:600px){
+    .about{
+        margin:52px auto;
+        padding:20px;
+    }
+
+    .content{
+        gap:40px;
+    }
+
+    .photo-card{
+        width:min(100%, 320px);
+        height:auto;
+        aspect-ratio:4 / 5;
+    }
+
+    .text-about{
+        padding-left:20px;
+    }
+}
+
 @media (max-width:400px){
     .photo-card{
-        width:260px;
-        height:350px;
+        width:min(100%, 260px);
     }
 }
 

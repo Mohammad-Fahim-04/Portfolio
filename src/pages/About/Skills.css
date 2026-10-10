@@ -1,6 +1,7 @@
 .skills{
-    margin-top:120px;
+    margin-top:clamp(64px, 12vw, 120px);
     text-align:center;
+    min-width:0;
 }
 
 .skills h3{
@@ -21,13 +22,18 @@
 .skills-track{
     display:flex;
     align-items:center;
-    gap:70px;
-    font-size:55px;
+    gap:clamp(32px, 7vw, 70px);
+    font-size:clamp(38px, 7vw, 55px);
     color:#444;
     width:max-content;
     animation:scrollSkills 20s linear infinite;
 }
 
+@media (prefers-reduced-motion:reduce){
+    .skills-track{
+        animation:none;
+    }
+}
 
 
 .skills-track svg{

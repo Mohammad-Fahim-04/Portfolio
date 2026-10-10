@@ -37,6 +37,10 @@
   gap: clamp(48px, 7vw, 112px);
 }
 
+.hero-redesign__copy {
+  min-width: 0;
+}
+
 /* ---------- ENTRANCE (staggered) ---------- */
 
 .hero-redesign__eyebrow,
@@ -135,6 +139,7 @@
 .hero-redesign__typing-text {
   color: #e6e6e6;
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .hero-redesign__caret {
@@ -783,6 +788,10 @@ a.hero-redesign__social:hover {
   }
 
   .hero-redesign__copy {
+    width: 100%;
+  }
+
+  .hero-redesign__copy {
     max-width: 600px;
   }
 
@@ -792,7 +801,7 @@ a.hero-redesign__social:hover {
   }
 
   .hero-redesign__name {
-    font-size: clamp(76px, 18vw, 112px);
+    font-size: clamp(64px, 18vw, 112px);
   }
 
   .hero-redesign__title {
@@ -868,6 +877,12 @@ a.hero-redesign__social:hover {
 
   .hero-redesign__description {
     font-size: 14px;
+  }
+
+  .hero-redesign__projects {
+    max-width:100%;
+    padding-inline:16px;
+    letter-spacing:0.08em;
   }
 }
 
