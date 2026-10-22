@@ -163,13 +163,20 @@
 
 /* ---------- BUTTON ---------- */
 
+.hero-redesign__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
 .hero-redesign__projects {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   width: fit-content;
   min-height: 52px;
-  margin-top: 30px;
+  margin-top: 0;
   padding: 0 22px;
   display: inline-flex;
   align-items: center;

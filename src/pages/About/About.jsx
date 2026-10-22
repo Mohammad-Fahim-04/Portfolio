@@ -41,19 +41,19 @@ function About() {
        
 <div className="text-about">
   <p>
-    Generative AI and MERN Stack enthusiast building scalable web apps with AI-powered features using React, Node.js, Express.js, and MongoDB.
+    I am an aspiring AI Engineer building practical AI applications and full-stack web experiences. I use Python for AI development and React, Node.js, Express.js, and MongoDB to build web applications.
   </p>
 
   <p>
-    I work with LLMs like Mistral and Groq, using LangChain, LangGraph, and MCP (Model Context Protocol) to build intelligent AI workflows and connect AI applications with external tools and services.
+    My AI experience includes working with LLMs such as Mistral and Groq, and using LangChain, LangGraph, and MCP (Model Context Protocol) to build intelligent workflows and connect applications with external tools and services.
   </p>
 
   <p>
-    I have hands-on experience with RAG, FAISS, and FastAPI to build AI systems that provide context-aware answers from real documents. I also work with Tavily for web search, along with Redux Toolkit, JWT, and REST APIs.
+    I have hands-on experience with Retrieval-Augmented Generation (RAG), embeddings, FAISS, and FastAPI for context-aware systems grounded in documents. I also work with Tavily for web search, alongside Redux Toolkit, JWT, and REST APIs.
   </p>
 
   <p>
-    Always learning and building new things in Generative AI and web development. Open to connect and collaborate.
+    I am continually learning across AI engineering and full-stack development, and I am open to connecting and collaborating.
   </p>
 </div>
 

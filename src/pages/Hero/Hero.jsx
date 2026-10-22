@@ -25,11 +25,10 @@ const socialLinks = [
   },
 ];
 
-/* typing line mein ye words ghoomte rahenge, apne hisaab se badal sakte ho */
 const typedWords = [
-  "GenAI applications",
+  "Python AI applications",
   "RAG pipelines",
-  "AI agents with LangGraph",
+  "AI agents and workflows",
   "full-stack MERN apps",
 ];
 
@@ -82,7 +81,7 @@ export default function Hero() {
         <div className="hero-redesign__copy">
           <p className="hero-redesign__eyebrow">HI, I'M</p>
           <h1 className="hero-redesign__name">Fahim</h1>
-          <h2 className="hero-redesign__title">GEN AI &amp; MERN Stack Developer</h2>
+          <h2 className="hero-redesign__title">Aspiring AI Engineer</h2>
 
           <p className="hero-redesign__typing" aria-live="off">
             <span className="hero-redesign__typing-prefix">&gt; building</span>
@@ -91,14 +90,23 @@ export default function Hero() {
           </p>
 
           <p className="hero-redesign__description">
-            <span>I build intelligent GenAI applications and modern full-stack</span>
-            <span>MERN experiences with clean UI and practical real-world solutions.</span>
+            <span>I build practical AI applications and full-stack</span>
+            <span>experiences, from intelligent workflows to polished web products.</span>
           </p>
 
-          <a className="hero-redesign__projects" href="#project">
-            <span>VIEW PROJECTS</span>
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
-          </a>
+          <div className="hero-redesign__actions">
+            <a className="hero-redesign__projects" href="#project">
+              <span>EXPLORE PROJECTS</span>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
+            </a>
+            <a
+              className="hero-redesign__projects"
+              href={`${import.meta.env.BASE_URL}Fahim_Bavan_AI_Engineer_Resume.pdf`}
+              download="Fahim_Bavan_AI_Engineer_Resume.pdf"
+            >
+              <span>DOWNLOAD RESUME</span>
+            </a>
+          </div>
 
           <div className="hero-redesign__socials" aria-label="Social links">
             {socialLinks.map(({ label, href, icon }) => {
@@ -140,7 +148,7 @@ export default function Hero() {
           </div>
           <div className="hero-redesign__card hero-redesign__card--role">
             <span className="hero-redesign__card-label">ROLE</span>
-            <span className="hero-redesign__card-value">GenAI &amp; MERN Developer</span>
+            <span className="hero-redesign__card-value">Aspiring AI Engineer</span>
           </div>
           <div className="hero-redesign__card hero-redesign__card--focus">
             <span className="hero-redesign__card-label">FOCUS</span>

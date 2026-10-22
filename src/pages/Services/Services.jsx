@@ -22,8 +22,8 @@ function Services(){
 
         <div className="service-card">
           <FaRobot className="service-icon"/>
-          <h3>Generative AI Apps</h3>
-          <p>I build AI-powered apps using LLMs, RAG, LangChain and LangGraph, such as chatbots and research assistants.</p>
+          <h3>AI Applications &amp; Workflows</h3>
+          <p>I build AI applications and intelligent workflows with Python, LLMs, RAG, LangChain, and LangGraph, including chatbots and research assistants.</p>
         </div>
 
       </div>

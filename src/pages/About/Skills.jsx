@@ -42,13 +42,13 @@ function Skills() {
           <SiRedux title="Redux Toolkit" />
           <SiTailwindcss title="Tailwind CSS" />
 
-          {/* Backend (MERN) */}
+          {/* Backend and full-stack development */}
           <FaNodeJs title="Node.js" />
           <SiExpress title="Express.js" />
           <SiMongodb title="MongoDB" />
           <SiJsonwebtokens title="JWT" />
 
-          {/* Gen AI */}
+          {/* AI engineering */}
           <SiPython title="Python" />
           <SiFastapi title="FastAPI" />
           <SiLangchain title="LangChain / LangGraph" />
